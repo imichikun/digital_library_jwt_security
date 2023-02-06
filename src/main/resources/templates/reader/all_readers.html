@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Readers</title>
+</head>
+<body>
+
+<div th:each="var: ${allReaders}">
+    <br>
+    <a th:href="@{/readers/{id}(id=${var.getId()})}" th:text="${var.getName()}"> specific reader</a>
+</div>
+<hr/>
+
+<form th:method="POST" th:action="@{/logout}">
+    <input type="submit" value="Logout">
+</form>
+
+</body>
+</html>
